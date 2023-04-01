@@ -1,0 +1,27 @@
+
+.poke-entry {
+    display: flex;
+    flex-direction: column;
+    flex-basis: calc(30.33% - 10px);
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+  }
+
+.poke-image{
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  li span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
