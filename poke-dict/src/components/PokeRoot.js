@@ -1,15 +1,22 @@
-import React from 'react'
+import React, { useState } from "react";
 
-import classes from './PokeRoot.module.css'
-import SearchBar from './SearchBar'
-import PokeTable from './PokeTable'
-
+import classes from "./PokeRoot.module.css";
+import SearchBar from "./SearchBar";
+import PokeTable from "./PokeTable";
 
 const PokeRoot = () => {
-    return <React.Fragment>
-        <SearchBar />
-        <PokeTable />
-    </React.Fragment>
-}
+  const [searchedName, setSearchedName] = useState("");
 
-export default PokeRoot
+  const handleSearch = (name) => {
+    setSearchedName(name)
+  }
+
+  return (
+    <React.Fragment>
+      <SearchBar onSearch={handleSearch} />
+      <PokeTable targetName={searchedName} />
+    </React.Fragment>
+  );
+};
+
+export default PokeRoot;
