@@ -26,7 +26,7 @@ const PokeTable = ({ targetName }) => {
     } catch (e) {
       console.error(e);
     }
-  }, []);
+  });
 
   // specific pokemons
   useEffect(() => {
@@ -50,14 +50,13 @@ const PokeTable = ({ targetName }) => {
       {showedPokemons.length === 1 ? (
         <ul className={styles["poke-single-table"]}>
           {showedPokemons.map((pokemon) => (
-            // <Link to="/"><PokeSpecific pokeObj={pokemon} /></Link>
-            <PokeSpecific pokeObj={pokemon} />
+            <Link to={`/pokemon/?name=${pokemon.pokeName}`}><PokeSpecific pokeObj={pokemon} /></Link>
           ))}
         </ul>
       ) : (
         <ul className={styles["poke-table"]}>
           {showedPokemons.map((pokemon) => (
-            <PokeSpecific pokeObj={pokemon} />
+            <Link to={`/pokemon/?name=${pokemon.pokeName}`}><PokeSpecific pokeObj={pokemon} /></Link>
           ))}
         </ul>
       )}

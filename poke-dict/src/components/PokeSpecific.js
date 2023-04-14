@@ -3,19 +3,13 @@ import styles from "./PokeSpecific.module.css";
 
 const PokeSpecific = ({pokeObj}) => {
   return (
-    <React.Fragment
-      onClick={()=>{
-        
-      }}
-    >
+    <React.Fragment>
       <li className={styles['poke-entry']} key={pokeObj.pokeEntry}>
         <img className={styles['poke-image']} src={pokeObj.spriteUrl} alt={pokeObj.pokeName} />
         <h2>
           {pokeObj.pokeName.charAt(0).toUpperCase() +
             pokeObj.pokeName.slice(1)}
         </h2>
-
-        {/* insert a link later for the more details */}
       </li>
     </React.Fragment>
   );
