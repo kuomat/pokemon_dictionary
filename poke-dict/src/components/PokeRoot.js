@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-import classes from "./PokeRoot.module.css";
 import SearchBar from "./SearchBar";
 import PokeTable from "./PokeTable";
 

@@ -1,12 +1,12 @@
-import React, { createRef, useRef } from "react";
-import styles from "./SearchBar.module.css";
+import React, {useRef} from "react"
+import styles from "./SearchBar.module.css"
 
 const SearchBar = ({ onSearch }) => {
   const inputSearch = useRef(null);
 
   const clickHandler = () => {
     onSearch(inputSearch.current.value)
-  };
+  }
 
   return (
     <div className={styles["search-container"]}>
