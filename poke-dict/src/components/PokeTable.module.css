@@ -16,3 +16,15 @@
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: inherit;
+}
+
+a:not(:visited) {
+    text-decoration: none;
+    color: inherit;
+}

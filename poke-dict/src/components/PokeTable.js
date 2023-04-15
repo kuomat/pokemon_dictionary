@@ -7,6 +7,7 @@ import styles from "./PokeTable.module.css";
 
 const P = new Pokedex();
 const PokeTable = ({ targetName }) => {
+
   const [allPokemons, setAllPokemons] = useState([]);
   const [showedPokemons, setShowedPokemons] = useState([]);
 
@@ -26,7 +27,7 @@ const PokeTable = ({ targetName }) => {
     } catch (e) {
       console.error(e);
     }
-  });
+  },[]);
 
   // specific pokemons
   useEffect(() => {
@@ -41,6 +42,7 @@ const PokeTable = ({ targetName }) => {
     }
   }, [targetName]);
 
+
   if (!allPokemons) {
     return <p>Loading...</p>;
   }
@@ -50,13 +52,19 @@ const PokeTable = ({ targetName }) => {
       {showedPokemons.length === 1 ? (
         <ul className={styles["poke-single-table"]}>
           {showedPokemons.map((pokemon) => (
-            <Link to={`/pokemon/?name=${pokemon.pokeName}`}><PokeSpecific pokeObj={pokemon} /></Link>
+            <Link
+              key={pokemon.entry_number}
+              to={`/pokemon/?name=${pokemon.pokeName}`}
+            ><PokeSpecific pokeObj={pokemon} /></Link>
           ))}
         </ul>
       ) : (
         <ul className={styles["poke-table"]}>
           {showedPokemons.map((pokemon) => (
-            <Link to={`/pokemon/?name=${pokemon.pokeName}`}><PokeSpecific pokeObj={pokemon} /></Link>
+            <Link
+              key={pokemon.entry_number}
+              to={`/pokemon/?name=${pokemon.pokeName}`}
+            ><PokeSpecific pokeObj={pokemon} /></Link>
           ))}
         </ul>
       )}

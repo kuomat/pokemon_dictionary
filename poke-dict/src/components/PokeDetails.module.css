@@ -19,3 +19,12 @@
     font-size: 16px;
     margin-bottom: 10px;
 }
+
+.specific-button {
+    justify-content: center;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 10px;
+    display: block;
+    margin: 0 auto;
+}
